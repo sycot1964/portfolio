@@ -1,0 +1,16 @@
+<div>
+  <carousel>
+    <h2>{{ title }}</h2>
+    <div *ngFor="let el of worksList">
+      <slide>
+        <div class="text-center py-5 bg-dark text-white">
+          <h2>{{ el.contents }}</h2>
+          <div class="lead">
+            <h3>{{ el.leng }}</h3>
+            <p>{{ el.term }}</p>
+          </div>
+        </div>
+      </slide>
+    </div>
+  </carousel>
+</div>

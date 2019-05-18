@@ -1,0 +1,13 @@
+<div>
+  <div>
+    <h2>{{ memberTitle }}</h2>
+  </div>
+  <div>
+    <profile-component [profileInfo]="profileInfoList[0]"></profile-component>
+    <profile-component [profileInfo]="profileInfoList[1]"></profile-component>
+    <profile-component [profileInfo]="profileInfoList[2]"></profile-component>
+  </div>
+</div>
+<div>
+  <worklist-component [title]="workTitle"></worklist-component>
+</div>
