@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     PageModule,
     PortfolioComponentModule,
     CarouselModule.forRoot(),
-    
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

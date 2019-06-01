@@ -1,0 +1,18 @@
+@import "common";
+
+.cx {
+  &-profile {
+    &-area {
+      @include horizon-center;
+      @media screen and (min-width: $break-small) {
+        display: table;
+      }
+    }
+    &-item {
+      @media screen and (min-width: $break-small) {
+        padding: 0 20px;
+        display: table-cell;
+      }
+    }
+  }
+}

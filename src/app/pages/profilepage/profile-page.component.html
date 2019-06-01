@@ -1,44 +1,33 @@
-<profile-component [profileInfo]="profileInfo"></profile-component>
-<tabset [justified]="true">
-  <tab [heading]="TAG_PROFILE">
-    <h3>Birth</h3>
-    <p>1990年06月05日(29歳)</p>
-    <br />
-    <h3>Biography</h3>
-    <br />
-    <p>
-      Hi, thanks for visiting my site. I am a freelance front-end develper. I
-      was born and raised in Fukuoka, Japan and lived in Australia for more than
-      one year after graduating from uni.
-    </p>
-    <p>
-      I worked for an internet sales company for two years after I got back to
-      Japan. I helped them start a new rental bike business, also customise and
-      translate their website.
-    </p>
-    <p>
-      More than 3 years ago, I started learing web development by
-      myself(sometimes with my friend). Now I am working mostly on buiding
-      websites for companies or individuals. Feel free to contact me via SNS or
-      Blog.
-    </p>
-    <h3>Skills</h3>
-    <ul>
-      <li>Java/Spring framework</li>
-      <li>GoLang</li>
-      <li>Javascript/Typescript</li>
-      <li>React.js/Angular.js</li>
-      <li>Oracle/MySql</li>
-      <li>Git/SVN</li>
-    </ul>
-  </tab>
-  <tab [heading]="TAG_WORKS">
-    Short Labeled Justified content
-  </tab>
-  <tab [heading]="TAG_CONTACT">
-    Long Labeled Justified content
-  </tab>
-  <tab [heading]="TAG_SOCIALS">
-    Long Labeled Justified content
-  </tab>
-</tabset>
+<div class="container">
+  <profile-component [profileInfo]="profileInfo"></profile-component>
+  <tabset *ngIf="profileData" [justified]="true">
+    <tab [heading]="TAG_PROFILE">
+      <h3>Birth</h3>
+      <p>{{profileData.birth}}({{profileData.age}}歳)</p>
+      <br/>
+      <h3>Biography</h3>
+      <br/>
+      <p *ngFor="let item of profileData.biographyList">
+        {{item}}
+      </p>
+      <h3>Skills</h3>
+      <ul>
+        <li>Java/Spring framework</li>
+        <li>GoLang</li>
+        <li>Javascript/Typescript</li>
+        <li>React.js/Angular.js</li>
+        <li>Oracle/MySql</li>
+        <li>Git/SVN</li>
+      </ul>
+    </tab>
+    <tab [heading]="TAG_WORKS">
+      Short Labeled Justified content
+    </tab>
+    <tab [heading]="TAG_CONTACT">
+      Long Labeled Justified content
+    </tab>
+    <tab [heading]="TAG_SOCIALS">
+      Long Labeled Justified content
+    </tab>
+  </tabset>
+</div>

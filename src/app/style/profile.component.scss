@@ -1,0 +1,33 @@
+@import "common";
+
+.cx {
+  &-profile-comp {
+    margin:15px 0;
+    &-img-area {
+      @media screen and (min-width: $break-small) {
+        text-align: center;
+      }
+      @media screen and (max-width: $break-small) {
+        float: left;
+        margin-right: 15px;
+      }
+    }
+    &-img {
+      @media screen and (min-width: $break-small) {
+        height: 250px;
+        width: 250px;
+      }
+      height: 40vw;
+      width: 40vw;
+    }
+    &-contents {
+      @media screen and (max-width: $break-small) {
+        height: 40vw;
+      }
+      @media screen and (min-width: $break-small) {
+        text-align: center;
+      }
+    }
+  }
+}
+

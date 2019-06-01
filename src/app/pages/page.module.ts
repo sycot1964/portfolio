@@ -7,6 +7,7 @@ import {CommonModule} from "@angular/common";
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import {AppProfilePageComponent} from "./profilepage/profile-page.component";
 import {AppWroksPageComponent} from "./workspage/works-page.component"
+import {InfiniteScrollModule} from "ngx-infinite-scroll";
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import {AppWroksPageComponent} from "./workspage/works-page.component"
     FormsModule,
     RouterModule,
     PortfolioComponentModule,
+    InfiniteScrollModule,
   ]
   , declarations: [
     AppMainPageComponent,

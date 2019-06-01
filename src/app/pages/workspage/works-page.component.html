@@ -3,3 +3,20 @@
   {{ introduce }}
 </div>
 
+
+<!--infinite scroll-->
+<button (click)="onClickAddScroll()">Add</button>
+<div
+  class="search-results"
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollUpDistance]="1.5"
+  [infiniteScrollThrottle]="50"
+  (scrolled)="onScrollDown($event)"
+  (scrolledUp)="onScrollUp($event)"
+>
+  <div *ngFor="let item of scrollDemoList; let idx = index;">
+    <p>{{idx}}</p>
+    <img [src]="'https://img.insight.co.kr/static/2018/05/08/700/6341nxg8t75g9r2ouc20.jpg'"/>
+  </div>
+</div>

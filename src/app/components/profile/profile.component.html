@@ -1,11 +1,13 @@
-<div>
-  <div style="text-align:center;">
-    <img [src]="profileInfo.pictureUrl" height="250" width="250" (click) = "onClickPicture()"/>
+<div class="cx-profile-comp">
+  <div class="cx-profile-comp-img-area">
+    <img [src]="profileInfo.pictureUrl" class="cx-profile-comp-img" (click)="onClickPicture()"/>
   </div>
-  <div style="text-align:center">
-    <p>{{ profileInfo.name }}</p>
-  </div>
-  <div style="text-align:center">
-    <p>{{ profileInfo.comment }}</p>
+  <div class="cx-profile-comp-contents">
+    <div>
+      <p>{{ profileInfo.name }}</p>
+    </div>
+    <div>
+      <p>{{ profileInfo.comment }}</p>
+    </div>
   </div>
 </div>

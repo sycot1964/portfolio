@@ -1,13 +1,21 @@
-<div>
+<div class="container">
   <div>
     <h2>{{ memberTitle }}</h2>
   </div>
-  <div>
-    <profile-component [profileInfo]="profileInfoList[0]"></profile-component>
-    <profile-component [profileInfo]="profileInfoList[1]"></profile-component>
-    <profile-component [profileInfo]="profileInfoList[2]"></profile-component>
-  </div>
+  <!--<div>-->
+  <!--<profile-component [profileInfo]="profileInfoList[0]"></profile-component>-->
+  <!--<profile-component [profileInfo]="profileInfoList[1]"></profile-component>-->
+  <!--<profile-component [profileInfo]="profileInfoList[2]"></profile-component>-->
+  <!--</div>-->
+  <section class="cx-profile-area">
+    <div *ngFor="let item of profileInfoList" class="cx-profile-item">
+      <profile-component [profileInfo]="item"></profile-component>
+    </div>
+  </section>
+  <section>
+    <worklist-component [title]="workTitle"></worklist-component>
+  </section>
 </div>
 <div>
-  <worklist-component [title]="workTitle"></worklist-component>
+
 </div>
