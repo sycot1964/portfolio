@@ -21,7 +21,7 @@ export class AppWroksPageComponent extends CommonComponent<models.TestParams, mo
     console.log(1);
   }
 
-  onClickAddScroll(){
+  onClickAddScroll() {
     this.scrollDemoList.push(1)
   }
 }

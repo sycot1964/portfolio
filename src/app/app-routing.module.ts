@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
+  { path: '', component:AppMainPageComponent},
   { path: 'mainPage', component:AppMainPageComponent},
   { path: 'anProfilePage', component:AppProfilePageComponent},
   { path: 'parkProfilePage', component:AppProfilePageComponent},

@@ -9,6 +9,7 @@ export class CommonComponent<P, R> {
   beforeExecAsync(P) {
     return [];
   }
+  
 
   async exec() {
     const params = this.getParams();

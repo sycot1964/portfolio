@@ -17,6 +17,7 @@ export class AppProfilePageComponent extends CommonComponent<models.TestParams,
   TAG_WORKS = "works";
   TAG_CONTACT = "contact";
   TAG_SOCIALS = "socials";
+
   // @Input() profileInfo: ProfileInfo = null;
   profileInfo: ProfileInfo = {
     linkPath: "anProfilePage",
@@ -40,14 +41,13 @@ export class AppProfilePageComponent extends CommonComponent<models.TestParams,
   }
 
   ngOnInit() {
-    this.route.queryParams
-      .subscribe(params => {
-        console.log(params['id']); // {order: "popular"}
-        console.log(params); // {order: "popular"}
+    this.route.queryParams.subscribe(params => {
+      console.log(params["id"]); // {order: "popular"}
+      console.log(params); // {order: "popular"}
 
-        // this.order = params.order;
-        // console.log(this.order); // popular
-      });
+      // this.order = params.order;
+      // console.log(this.order); // popular
+    });
   }
 
 

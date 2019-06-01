@@ -8,18 +8,18 @@ import { AppComponent } from './app.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import {HttpClientModule} from "@angular/common/http";
 
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     PageModule,
     PortfolioComponentModule,
     CarouselModule.forRoot(),
-    HttpClientModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]
