@@ -1,3 +1,4 @@
+import { FooterComponent } from './footerComponent/footer.component';
 import { WorkListComponent } from './workList/worklist.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { headerComponent } from './headerComponent/header.component';
@@ -18,12 +19,14 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
   , declarations: [
     ProfileComponent,
     headerComponent,
+    FooterComponent,
     SideNavComponent,
     WorkListComponent, 
   ]
   , exports: [
     ProfileComponent,
     headerComponent,
+    FooterComponent,
     SideNavComponent, 
     WorkListComponent, 
   ]

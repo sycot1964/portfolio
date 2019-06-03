@@ -3,12 +3,12 @@
   <tabset *ngIf="profileData" [justified]="true">
     <tab [heading]="TAG_PROFILE">
       <h3>Birth</h3>
-      <p>{{profileData.birth}}({{profileData.age}}歳)</p>
-      <br/>
+      <p>{{ profileData.birth }}({{ profileData.age }}歳)</p>
+      <br />
       <h3>Biography</h3>
-      <br/>
+      <br />
       <p *ngFor="let item of profileData.biographyList">
-        {{item}}
+        {{ item }}
       </p>
       <h3>Skills</h3>
       <ul>
@@ -21,13 +21,20 @@
       </ul>
     </tab>
     <tab [heading]="TAG_WORKS">
-      Short Labeled Justified content
+      <!-- TODO: 어떻게 넣어야 할지 -->
     </tab>
     <tab [heading]="TAG_CONTACT">
-      Long Labeled Justified content
+      <h3>Email</h3>
+      <p>{{ profileData.email }}</p>
+      <h3>Instagram</h3>
+      <p>{{ profileData.instagram }}</p>
+      <h3>Facebook</h3>
+      <p>{{ profileData.facebook }}</p>
+      <h3>Blog</h3>
+      <p>{{ profileData.blog }}</p>
     </tab>
-    <tab [heading]="TAG_SOCIALS">
+    <!-- <tab [heading]="TAG_SOCIALS">
       Long Labeled Justified content
-    </tab>
+    </tab> -->
   </tabset>
 </div>
