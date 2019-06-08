@@ -1,3 +1,4 @@
+import { ProfileWorksComponent } from './../components/profileworksComponent/profile.works.component';
 import { AppMainPageComponent } from './mainpage/main-page.component';
 import { PortfolioComponentModule } from './../components/portfolio.component.module';
 import {NgModule} from '@angular/core';

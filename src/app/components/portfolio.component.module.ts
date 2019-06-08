@@ -1,3 +1,4 @@
+import { ProfileWorksComponent } from './profileworksComponent/profile.works.component';
 import { FooterComponent } from './footerComponent/footer.component';
 import { WorkListComponent } from './workList/worklist.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
@@ -8,27 +9,30 @@ import {CommonModule} from "@angular/common";
 
 import { ProfileComponent } from './profile/profile.component';
 // RECOMMENDED
-import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { CarouselModule, ModalModule } from 'ngx-bootstrap';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     CarouselModule.forRoot(),
+    ModalModule.forRoot(),
   ]
   , declarations: [
     ProfileComponent,
     headerComponent,
     FooterComponent,
     SideNavComponent,
-    WorkListComponent, 
+    WorkListComponent,
+    ProfileWorksComponent,
   ]
   , exports: [
     ProfileComponent,
     headerComponent,
     FooterComponent,
     SideNavComponent, 
-    WorkListComponent, 
+    WorkListComponent,
+    ProfileWorksComponent,
   ]
   , providers: []
 })
