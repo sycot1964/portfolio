@@ -1,6 +1,8 @@
 import { ProfileInfo } from './../../vo/profileInfo';
 import { Component } from '@angular/core';
 import { CommonComponent } from './../../common/common.component';
+import {ActivatedRoute} from "@angular/router";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import * as models from './../../models';
 
 @Component({
@@ -15,29 +17,21 @@ export class AppMainPageComponent extends CommonComponent<models.TestParams, mod
   profileInfoList: ProfileInfo[] = [];
   workTitle = 'Works';
 
-  ngOnInit() {
-    // TODO: 데이터를 공유하기 위한 테스트
-    const profileInfo1: ProfileInfo = {
-      linkPath: 'anProfilePage',
-      name: '안태웅',
-      comment: 'TEST COMMENT1',
-      pictureUrl: 'https://img.insight.co.kr/static/2018/05/08/700/6341nxg8t75g9r2ouc20.jpg',
-    }; 
-    const profileInfo2: ProfileInfo = {
-      linkPath: 'yuProfilePage',
-      name: '유호건',
-      comment: 'TEST COMMENT2',
-      pictureUrl: 'https://img.insight.co.kr/static/2018/05/08/700/6341nxg8t75g9r2ouc20.jpg',
-    }; 
-    const profileInfo3: ProfileInfo = {
-      linkPath: 'parkProfilePage',
-      name: '박장호',
-      comment: 'TEST COMMENT3',
-      pictureUrl: 'https://img.insight.co.kr/static/2018/05/08/700/6341nxg8t75g9r2ouc20.jpg',
-    }; 
+  constructor(private route: ActivatedRoute, private http: HttpClient) {
+    super();
+    this.getTestData();
+  }
 
-    this.profileInfoList.push(profileInfo1);
-    this.profileInfoList.push(profileInfo2);
-    this.profileInfoList.push(profileInfo3);
+  getHeaders = new HttpHeaders({
+    'Accept': 'application/json'
+  });
+
+  getTestData() {
+    this.http.get('./assets/profileInfoList.json'
+      , {headers: this.getHeaders, withCredentials: true}).subscribe(
+      (res) => {
+        this.profileInfoList = res["profileInfoList"] as ProfileInfo[];
+      }
+    );
   }
 }

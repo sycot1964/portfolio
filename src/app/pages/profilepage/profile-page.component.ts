@@ -1,5 +1,5 @@
 import {ProfileInfo} from "src/app/vo/profileInfo";
-import {Component} from "@angular/core";
+import {Component, Input} from "@angular/core";
 import {CommonComponent} from "./../../common/common.component";
 import {ActivatedRoute} from "@angular/router";
 import * as models from "./../../models";
@@ -18,14 +18,14 @@ export class AppProfilePageComponent extends CommonComponent<models.TestParams,
   TAG_CONTACT = "contact";
   TAG_SOCIALS = "socials";
 
-  // @Input() profileInfo: ProfileInfo = null;
-  profileInfo: ProfileInfo = {
-    linkPath: "anProfilePage",
-    name: "안태웅",
-    comment: "TEST COMMENT1",
-    pictureUrl:
-      "https://img.insight.co.kr/static/2018/05/08/700/6341nxg8t75g9r2ouc20.jpg"
-  };
+  @Input() profileInfo: ProfileInfo = null;
+  // profileInfo: ProfileInfo = {
+  //   linkPath: "anProfilePage",
+  //   name: "안태웅",
+  //   comment: "TEST COMMENT1",
+  //   pictureUrl:
+  //     "https://img.insight.co.kr/static/2018/05/08/700/6341nxg8t75g9r2ouc20.jpg"
+  // };
 
   profileData = null;
 
@@ -40,19 +40,14 @@ export class AppProfilePageComponent extends CommonComponent<models.TestParams,
     this.getTestData();
   }
 
-  ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      console.log(params["id"]); // {order: "popular"}
-      console.log(params); // {order: "popular"}
-
-      // this.order = params.order;
-      // console.log(this.order); // popular
-    });
-  }
-
 
   getTestData() {
-    this.http.get('./assets/demo.json'
+    let dataPath = './assets/';
+    this.route.queryParams.subscribe(params => {
+      dataPath = dataPath + params["dataPath"] + '.json';
+    });
+
+    this.http.get(dataPath
       , {headers: this.getHeaders, withCredentials: true}).subscribe(
       (res) => {
         this.profileData = res;

@@ -1,0 +1,22 @@
+{
+    "profileInfoList" : [
+        {
+            "linkPath": "anProfilePage",
+            "name": "An taewoong",
+            "comment": "TEST COMMENT1",
+            "pictureUrl": "https://img.insight.co.kr/static/2018/05/08/700/6341nxg8t75g9r2ouc20.jpg"
+        }
+        , {
+            "linkPath": "yuProfilePage",
+            "name": "Yu Hogun",
+            "comment": "TEST COMMENT2",
+            "pictureUrl": "https://img.insight.co.kr/static/2018/05/08/700/6341nxg8t75g9r2ouc20.jpg"
+        }
+        ,{
+            "linkPath": "parkProfilePage",
+            "name": "Park jangho",
+            "comment": "TEST COMMENT3",
+            "pictureUrl": "https://img.insight.co.kr/static/2018/05/08/700/6341nxg8t75g9r2ouc20.jpg"
+        }
+    ]
+}

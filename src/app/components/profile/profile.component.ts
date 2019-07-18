@@ -17,6 +17,6 @@ export class ProfileComponent {
     if (!this.profileInfo || !this.profileInfo.linkPath) return;
 
     // this.router.navigateByUrl(this.profileInfo.linkPath);
-    this.router.navigate([this.profileInfo.linkPath], { queryParams: { order: 'popular', id: this.profileInfo.name } });
+    this.router.navigate([this.profileInfo.linkPath], { queryParams: { order: 'popular', dataPath: this.profileInfo.linkPath } });
   }
 }
